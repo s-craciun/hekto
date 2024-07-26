@@ -1,0 +1,133 @@
+.product-details {
+  color: var(--color-black);
+  display: flex;
+  flex-direction: column;
+
+  .product-overview {
+    display: flex;
+    gap: 100px;
+    padding: 60px 0;
+  }
+
+  .composition {
+    display: flex;
+    gap: 30px;
+  }
+
+  .demos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .composition-small {
+    border-radius: 8px;
+    height: 136px;
+    width: 192px;
+    object-fit: cover;
+    cursor: pointer;
+  }
+
+  .active-image {
+    border-radius: 8px;
+    height: 438px;
+    width: 528px;
+    object-fit: cover;
+  }
+
+  .product-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    & > *:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 35px;
+      color: var(--color-black);
+      margin: 0;
+      padding: 0;
+    }
+
+    p {
+      color: #a9acc6;
+      line-height: 1.4;
+    }
+  }
+
+  .offer {
+    margin-right: 20px;
+  }
+
+  .price {
+    text-decoration: line-through;
+    font-size: 14px;
+    color: var(--color-primary);
+  }
+
+  .cta {
+    margin-top: 30px;
+  }
+
+  .add-to-cart-btn {
+    border: none;
+    border-radius: 8px;
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    margin-right: 30px;
+  }
+
+  .additional {
+    background: var(--color-grey-1);
+    padding: 60px calc(304px + 120px);
+    margin: 0 -304px;
+    color: var(--color-grey-3);
+
+    h4 {
+      color: var(--color-black);
+    }
+
+    p {
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+  }
+
+  .additional-nav {
+    list-style: none;
+    display: flex;
+    margin-bottom: 40px;
+
+    & > li {
+      &:not(:last-child) {
+        margin-right: 50px;
+      }
+
+      a,
+      a:link,
+      a:visited {
+        color: var(--color-black);
+        font-size: 30px;
+      }
+    }
+  }
+
+  .additional-title {
+    color: var(--color-black);
+    margin-bottom: 20px;
+  }
+
+  .details-list {
+    list-style: disc;
+
+    & > li {
+      margin-left: 20px;
+
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

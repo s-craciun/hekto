@@ -1,0 +1,43 @@
+<div class="product">
+  <img
+    class="product-image"
+    [src]="mockProduct.imgPath"
+    [alt]="mockProduct.name"
+  />
+  <div class="product-info">
+    <h4 nz-title>{{ mockProduct.name }}</h4>
+    <span class="price">${{ mockProduct.offer | number : "2.2-2" }}</span>
+  </div>
+  <div class="product-count">
+    <nz-input-group
+      [nzAddOnBefore]="prefixIconButton"
+      [nzAddOnAfter]="suffixIconButton"
+    >
+      <input
+        type="text"
+        nz-input
+        [value]="productCount"
+        [ngModel]="productCount"
+      />
+    </nz-input-group>
+    <ng-template #prefixIconButton>
+      <span
+        class="count-icon"
+        nz-icon
+        nzType="minus"
+        (click)="onRemoveProductCount()"
+      ></span>
+    </ng-template>
+    <ng-template #suffixIconButton>
+      <span
+        class="count-icon"
+        nz-icon
+        nzType="plus"
+        (click)="onAddProductCount()"
+      ></span>
+    </ng-template>
+  </div>
+  <span class="total-product-price">
+    ${{ totalProductPrice | number : "2.2-2" }}
+  </span>
+</div>

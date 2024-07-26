@@ -1,0 +1,90 @@
+<div class="product-details">
+  <section class="product-overview" *ngIf="product$ | async as product">
+    <div class="composition">
+      <div class="demos">
+        <img
+          class="composition-small"
+          [src]="product?.imgPath"
+          [alt]="product?.name"
+          (click)="onClickSetActiveImage(product?.imgPath)"
+        />
+        <img
+          class="composition-small"
+          *ngFor="let demoPic of product?.demoImgs"
+          [src]="demoPic"
+          [alt]="product?.name"
+          (click)="onClickSetActiveImage(demoPic)"
+        />
+      </div>
+      <img class="active-image" [src]="activeImage" [alt]="product?.name" />
+    </div>
+    <div class="product-info">
+      <h3 nz-title>{{ product?.name }}</h3>
+      <app-product-rating [rating]="product?.rating || 0"></app-product-rating>
+      <div class="price-container">
+        <span class="offer">${{ product?.offer | number : "2.2-2" }}</span>
+        <span class="price">${{ product?.price | number : "2.2-2" }}</span>
+      </div>
+      <p>{{ product?.description }}</p>
+      <div class="cta">
+        <button class="add-to-cart-btn" nz-button nzSize="large">
+          Add To Cart
+        </button>
+        <button nz-button nzType="text" nzShape="circle">
+          <span nz-icon nzType="heart"></span>
+        </button>
+      </div>
+    </div>
+  </section>
+  <section class="additional">
+    <ul class="additional-nav">
+      <li>
+        <a><strong>Description</strong></a>
+      </li>
+      <li>
+        <a><strong>Additional Info</strong></a>
+      </li>
+      <li>
+        <a><strong>Reviews</strong></a>
+      </li>
+      <li>
+        <a><strong>Video</strong></a>
+      </li>
+    </ul>
+    <h4 class="additional-title" nz-title>Varius tempor</h4>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac quam
+      dolor. In dignissim lectus sed nisl tempor, ac porttitor libero
+      consectetur. Pellentesque diam dolor, tincidunt nec ante congue, tincidunt
+      facilisis tortor. Mauris vitae massa molestie, sagittis ligula vel,
+      egestas massa. Phasellus quis sodales augue. Donec nec ultricies diam.
+      Integer feugiat odio ut dictum viverra. Donec vehicula nisi placerat
+      cursus mollis. Nunc aliquam tempor justo, ut sagittis nisi. Mauris
+      ullamcorper quis nisl sed dictum. Maecenas quam risus, congue quis
+      accumsan at, imperdiet sed lectus. Aliquam in est purus
+    </p>
+    <h4 class="additional-title" nz-title>More details</h4>
+    <ul class="details-list">
+      <li>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac quam
+        dolor. In dignissim lectus sed nisl tempor, ac porttitor libero
+        consectetur.
+      </li>
+      <li>
+        Cras ac quam dolor. In dignissim lectus sed nisl tempor, ac porttitor
+        libero consectetur. Pellentesque diam dolor, tincidunt nec ante.
+      </li>
+      <li>
+        Pellentesque diam dolor, tincidunt nec ante congue, tincidunt facilisis
+        tortor.
+      </li>
+      <li>
+        Mauris vitae massa molestie, sagittis ligula vel, egestas massa.
+        Phasellus quis sodales augue. Donec nec ultricies diam.
+      </li>
+      <li>
+        Phasellus quis sodales augue. Integer feugiat odio ut dictum viverra.
+      </li>
+    </ul>
+  </section>
+</div>

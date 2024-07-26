@@ -1,0 +1,51 @@
+<nz-card
+  [nzCover]="coverTemplate"
+  [ngStyle]="{ width: cardView === 'grid' ? '304px' : undefined }"
+  [ngClass]="'card-' + cardView"
+  [routerLink]="['/products', product.id]"
+  nzHoverable
+  nzBorderless
+>
+  <div class="card-details">
+    <h4 class="product-name" nz-title>{{ product.name }}</h4>
+    <app-product-rating [rating]="product.rating"></app-product-rating>
+    <nz-space nzSize="middle" class="prices">
+      <span *nzSpaceItem class="offer"
+        >${{ product.offer | number : "2.2-2" }}</span
+      >
+      <span *nzSpaceItem class="price"
+        >${{ product.price | number : "2.2-2" }}</span
+      >
+    </nz-space>
+    <p class="description">{{ product.description }}</p>
+    <nz-space nzSize="middle" class="actions">
+      <button *nzSpaceItem nz-button nzType="text" nzShape="circle">
+        <span
+          class="action-icon"
+          nz-icon
+          nzType="shopping-cart"
+          nzTheme="outline"
+        ></span>
+      </button>
+      <button *nzSpaceItem nz-button nzType="text" nzShape="circle">
+        <span
+          class="action-icon"
+          nz-icon
+          nzType="heart"
+          nzTheme="outline"
+        ></span>
+      </button>
+      <button *nzSpaceItem nz-button nzType="text" nzShape="circle">
+        <span
+          class="action-icon"
+          nz-icon
+          nzType="zoom-in"
+          nzTheme="outline"
+        ></span>
+      </button>
+    </nz-space>
+  </div>
+</nz-card>
+<ng-template #coverTemplate>
+  <img [alt]="product.name" [src]="product.imgPath" />
+</ng-template>

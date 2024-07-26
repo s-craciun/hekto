@@ -1,0 +1,14 @@
+<section class="latest-products">
+  <h2 nz-title>Latest Products</h2>
+  <ul class="latest-nav">
+    <li><a>New Arrival</a></li>
+    <li><a>Best Seller</a></li>
+    <li><a>Featured</a></li>
+    <li><a>Special Offer</a></li>
+  </ul>
+  <nz-row class="product-list">
+    <nz-col *ngFor="let product of latestProducts">
+      <app-simple-card cardType="latest" [product]="product"></app-simple-card>
+    </nz-col>
+  </nz-row>
+</section>

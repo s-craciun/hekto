@@ -1,0 +1,29 @@
+.featured {
+  text-align: center;
+  padding: 80px 0;
+
+  h2 {
+    margin-bottom: 50px;
+  }
+
+  .product-list {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .btns {
+    margin-top: 20px;
+
+    button {
+      border: none;
+      border-radius: 100px;
+      background-color: #febad7;
+      width: 16px;
+      height: 4px;
+    }
+
+    button:not(:last-child) {
+      margin-right: 12px;
+    }
+  }
+}

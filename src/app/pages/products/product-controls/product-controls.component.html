@@ -1,0 +1,62 @@
+<form
+  class="controls-form"
+  nz-form
+  nzLayout="inline"
+  [formGroup]="controlsForm"
+  nz-flex
+  nzJustify="flex-end"
+  nzGap="50px"
+>
+  <nz-form-item>
+    <nz-form-label nzFor="perPage">Per Page</nz-form-label>
+    <nz-form-control>
+      <nz-select>
+        <nz-option [nzValue]="1" nzLabel="1"></nz-option>
+        <nz-option [nzValue]="5" nzLabel="5"></nz-option>
+        <nz-option [nzValue]="10" nzLabel="10"></nz-option>
+      </nz-select>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label>Sort By</nz-form-label>
+    <nz-form-control>
+      <nz-select formControlName="sortBy">
+        <nz-option nzValue="desc" nzLabel="Price: High -> Low"></nz-option>
+        <nz-option nzValue="asc" nzLabel="Price: Low -> High"></nz-option>
+      </nz-select>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label>View</nz-form-label>
+    <nz-form-control>
+      <button
+        nz-button
+        nzShape="circle"
+        nzType="text"
+        value="grid"
+        (click)="onChangeView('grid')"
+      >
+        <span
+          [ngClass]="setActiveView('grid')"
+          nz-icon
+          nzType="appstore"
+          nzTheme="fill"
+        ></span>
+      </button>
+      <button
+        nz-button
+        nzShape="circle"
+        nzType="text"
+        value="list"
+        (click)="onChangeView('list')"
+      >
+        <span
+          [ngClass]="setActiveView('list')"
+          nz-icon
+          nzType="unordered-list"
+          nzTheme="outline"
+        ></span>
+      </button>
+    </nz-form-control>
+  </nz-form-item>
+</form>

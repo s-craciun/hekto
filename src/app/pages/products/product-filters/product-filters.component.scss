@@ -1,0 +1,41 @@
+.filters {
+  & > *:not(:last-child) {
+    margin-bottom: 40px;
+  }
+}
+
+.filter-title {
+  white-space: nowrap;
+}
+
+.brand-checkbox {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.discount-checkbox {
+  white-space: nowrap;
+}
+
+.rating-star {
+  color: var(--color-grey-2);
+
+  &:not(:last-child) {
+    margin-right: 8px;
+  }
+}
+
+.rated {
+  color: var(--color-secondary);
+}
+
+fieldset {
+  & > * {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.prices {
+  width: 150px;
+}

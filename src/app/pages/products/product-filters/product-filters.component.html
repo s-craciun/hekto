@@ -1,0 +1,111 @@
+<form [formGroup]="filterForm" class="filters">
+  <fieldset
+    formArrayName="brand"
+    class="brands"
+    nz-flex
+    nzVertical
+    nzGap="10px"
+  >
+    <h4 class="filter-title" nz-title>Product brand</h4>
+    <label
+      *ngFor="let brand of getControls('brand'); index as i"
+      [formControlName]="i"
+      nz-checkbox
+      class="brand-checkbox"
+      >{{ filter.brand[i] | titlecase }}</label
+    >
+  </fieldset>
+  <fieldset
+    formArrayName="discount"
+    class="discounts"
+    nz-flex
+    nzVertical
+    nzGap="10px"
+  >
+    <h4 class="filter-title" nz-title>Discount Offer</h4>
+    <label
+      *ngFor="let discount of getControls('discount'); index as i"
+      [formControlName]="i"
+      nz-checkbox
+      class="discount-checkbox"
+      >{{ filter.discount[i] }}% Cashback offer</label
+    >
+  </fieldset>
+  <fieldset
+    formArrayName="rating"
+    class="ratings"
+    nz-flex
+    nzVertical
+    nzGap="10px"
+  >
+    <h4 class="filter-title" nz-title>Rating</h4>
+    <label
+      *ngFor="let rating of getControls('rating'); index as i"
+      [formControlName]="i"
+      nz-checkbox
+      class="rating-checkbox"
+      nz-flex
+      nzAlign="center"
+    >
+      <span
+        [ngClass]="setStarClass(i, 1)"
+        nz-icon
+        nzType="star"
+        nzTheme="fill"
+      ></span>
+      <span
+        [ngClass]="setStarClass(i, 2)"
+        nz-icon
+        nzType="star"
+        nzTheme="fill"
+      ></span>
+      <span
+        [ngClass]="setStarClass(i, 3)"
+        nz-icon
+        nzType="star"
+        nzTheme="fill"
+      ></span>
+      <span
+        [ngClass]="setStarClass(i, 4)"
+        nz-icon
+        nzType="star"
+        nzTheme="fill"
+      ></span>
+      <span
+        [ngClass]="setStarClass(i, 5)"
+        nz-icon
+        nzType="star"
+        nzTheme="fill"
+      ></span>
+    </label>
+  </fieldset>
+  <fieldset
+    formArrayName="category"
+    class="categories"
+    nz-flex
+    nzVertical
+    nzGap="10px"
+  >
+    <h4 class="filter-title" nz-title>Categories</h4>
+    <label
+      *ngFor="let category of getControls('category'); index as i"
+      [formControlName]="i"
+      nz-checkbox
+      class="category-checkbox"
+    >
+      {{ filter.category[i] | titlecase }}
+    </label>
+  </fieldset>
+  <nz-form-item class="prices" nz-flex nzVertical>
+    <h4 class="filter-title" nz-title>Price</h4>
+    <nz-radio-group formControlName="priceRange">
+      <label
+        *ngFor="let pricePair of filter.priceRange; index as i"
+        nz-radio
+        [nzValue]="pricePair"
+      >
+        {{ i === 0 ? "All" : renderPriceRange(pricePair) }}
+      </label>
+    </nz-radio-group>
+  </nz-form-item>
+</form>

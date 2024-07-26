@@ -1,0 +1,28 @@
+<div nz-flex nzAlign="center" class="navigation">
+  <h1 nz-title class="app-logo">Hekto</h1>
+  <ul nz-flex class="navigation-menu">
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <a [routerLink]="['/home']">Home</a>
+    </li>
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <a [routerLink]="['/products']">Products</a>
+    </li>
+    <li><a>Blog</a></li>
+    <li><a>Contact</a></li>
+  </ul>
+  <div nz-flex nzAlign="center" class="search">
+    <nz-input-group nzSearch [nzAddOnAfter]="suffixIconButton">
+      <input
+        type="text"
+        nz-input
+        placeholder="Search"
+        (input)="onChange($event)"
+      />
+    </nz-input-group>
+    <ng-template #suffixIconButton>
+      <button class="search-btn" nz-button nzType="primary" nzSearch>
+        <span nz-icon nzType="search"></span>
+      </button>
+    </ng-template>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+.product-rating {
+  color: var(--color-grey-2);
+
+  & > *:not(:last-child) {
+    margin-right: 8px;
+  }
+}
+
+.rated {
+  color: var(--color-secondary);
+}

@@ -1,0 +1,10 @@
+<section class="trending">
+  <h2 nz-title>Trending Products</h2>
+  <div class="product-list" nz-flex>
+    <app-simple-card
+      *ngFor="let product of trendingProducts"
+      [product]="product"
+      cardType="trending"
+    ></app-simple-card>
+  </div>
+</section>

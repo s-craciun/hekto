@@ -1,0 +1,72 @@
+<div nz-flex nzAlign="center" nzJustify="space-between" class="controls">
+  <ul nz-flex class="contacts">
+    <li>
+      <span nz-icon nzType="mail" nzTheme="outline" class="icon"></span>
+      <span>mhhasanul&#64;gmail.com</span>
+    </li>
+    <li>
+      <span nz-icon nzType="phone" nzTheme="outline" class="icon"></span>
+      <span>(12345)67890</span>
+    </li>
+  </ul>
+  <ul nz-flex nzAlign="center" class="settings">
+    <li class="language">
+      <a
+        nz-dropdown
+        [nzDropdownMenu]="languagesMenu"
+        class="dropdown-active-value"
+      >
+        {{ selectedLanguage }}
+        <span nz-icon nzType="down" class="icon"></span>
+      </a>
+      <nz-dropdown-menu #languagesMenu="nzDropdownMenu">
+        <ul nz-menu nzSelectable>
+          <li
+            nz-menu-item
+            *ngFor="let language of languages"
+            (click)="onSelectLanguage(language)"
+          >
+            {{ language }}
+          </li>
+        </ul>
+      </nz-dropdown-menu>
+    </li>
+    <li class="currency">
+      <a
+        nz-dropdown
+        [nzDropdownMenu]="currencyMenu"
+        class="dropdown-active-value"
+      >
+        {{ selectedCurrency }}
+        <span nz-icon nzType="down" class="icon"></span>
+      </a>
+      <nz-dropdown-menu #currencyMenu="nzDropdownMenu">
+        <ul nz-menu nzSelectable>
+          <li
+            nz-menu-item
+            *ngFor="let currency of currencies"
+            (click)="onSelectCurrency(currency)"
+          >
+            {{ currency }}
+          </li>
+        </ul>
+      </nz-dropdown-menu>
+    </li>
+    <li class="login">
+      <span>Login</span>
+      <span nz-icon nzType="user" nzTheme="outline" class="icon"></span>
+    </li>
+    <li class="wishlist">
+      <span>Wishlist</span>
+      <span nz-icon nzType="heart" nzTheme="outline" class="icon"></span>
+    </li>
+    <button nz-button nzType="text" nzShape="circle" [routerLink]="['/cart']">
+      <span
+        nz-icon
+        nzType="shopping-cart"
+        nzTheme="outline"
+        class="cart"
+      ></span>
+    </button>
+  </ul>
+</div>

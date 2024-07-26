@@ -1,0 +1,62 @@
+<footer class="footer">
+  <nz-row nzJustify="space-between" class="top">
+    <nz-col class="lefthand">
+      <h1 nz-title class="app-logo">Hekto</h1>
+      <div class="sign-up">
+        <nz-input-group nzSearch [nzAddOnAfter]="suffixIconButton">
+          <input type="text" nz-input placeholder="Enter Email Address" />
+        </nz-input-group>
+        <ng-template #suffixIconButton>
+          <button class="signup-btn" nz-button nzType="primary" nzSearch>
+            Sign Up
+          </button>
+        </ng-template>
+      </div>
+      <a>17 Princess Road, London, Greater London NW1 8JR, UK</a>
+    </nz-col>
+    <nz-col>
+      <h4 nz-title>Categories</h4>
+      <ul class="list">
+        <li><a>Laptops & Computers</a></li>
+        <li><a>Cameras & Photography</a></li>
+        <li><a>Smart Phones & Tablets</a></li>
+        <li><a>Video Games & Consoles</a></li>
+        <li><a>Waterproof Headphones</a></li>
+      </ul>
+    </nz-col>
+    <nz-col>
+      <h4 nz-title>Customer Care</h4>
+      <ul class="list">
+        <li><a>My Account</a></li>
+        <li><a>Discount</a></li>
+        <li><a>Returns</a></li>
+        <li><a>Orders History</a></li>
+        <li><a>Order Tracking</a></li>
+      </ul>
+    </nz-col>
+    <nz-col>
+      <h4 nz-title>Pages</h4>
+      <ul class="list">
+        <li><a>Blog</a></li>
+        <li><a>Browse the Shop</a></li>
+        <li><a>Category</a></li>
+        <li><a>Pre-Built Pages</a></li>
+        <li><a>Visual Composer Elements</a></li>
+      </ul>
+    </nz-col>
+  </nz-row>
+  <nz-row class="bottom" nzJustify="space-between">
+    <span class="copyright">©Webecy - All Rights Reserved</span>
+    <ul class="social-list list" nz-flex>
+      <li>
+        <a><span nz-icon nzType="facebook" nzTheme="fill"></span></a>
+      </li>
+      <li>
+        <a><span nz-icon nzType="twitter"></span></a>
+      </li>
+      <li>
+        <a><span nz-icon nzType="instagram" nzTheme="fill"></span></a>
+      </li>
+    </ul>
+  </nz-row>
+</footer>

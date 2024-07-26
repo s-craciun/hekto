@@ -1,0 +1,13 @@
+<section class="featured">
+  <h2 nz-title>Featured Products</h2>
+  <div class="product-list" nz-flex>
+    <app-simple-card
+      *ngFor="let product of featuredProducts"
+      [product]="product"
+      cardType="featured"
+    ></app-simple-card>
+  </div>
+  <div class="btns">
+    <button *ngFor="let product of featuredProducts"></button>
+  </div>
+</section>

@@ -1,0 +1,27 @@
+.products-title {
+  text-align: center;
+}
+
+.navigation {
+  & > * {
+    cursor: pointer;
+  }
+
+  & > * a,
+  & > * a:link,
+  & > * a:visited {
+    color: var(--color-black);
+  }
+
+  & > *:not(:last-child) {
+    margin-right: 40px;
+  }
+}
+
+img {
+  object-fit: cover;
+}
+
+.active {
+  text-decoration: underline;
+}

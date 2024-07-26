@@ -1,0 +1,14 @@
+<div nz-flex nzVertical class="product-list">
+  <div nz-flex nzWrap="wrap" nzGap="40px" class="product-items">
+    <app-card
+      *ngFor="let product of products$ | async"
+      [product]="product"
+      [cardView]="view"
+    ></app-card>
+  </div>
+  <nz-pagination
+    class="pagination"
+    [nzPageIndex]="1"
+    [nzTotal]="40"
+  ></nz-pagination>
+</div>

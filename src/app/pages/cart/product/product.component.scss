@@ -1,0 +1,27 @@
+.product {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  .product-image {
+    height: 104px;
+    width: 149px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .product-info {
+    justify-self: flex-start;
+  }
+
+  .product-count {
+    width: 120px;
+    margin-left: auto;
+  }
+
+  .count-icon {
+    cursor: pointer;
+    font-size: 11px;
+  }
+}

@@ -1,0 +1,22 @@
+<nz-card
+  [nzCover]="coverTemplate"
+  [ngClass]="cardType + '-card'"
+  nzBorderless
+  nzHoverable="true"
+>
+  <div class="card-body">
+    <h5 nz-title class="product-name">{{ product.name }}</h5>
+    <p *ngIf="cardType === 'featured'" class="product-code">
+      Code - {{ product.id }}
+    </p>
+    <div class="price-container">
+      <span class="offer">${{ product.offer | number : "2.2-2" }}</span>
+      <span class="price" *ngIf="cardType !== 'featured'">
+        ${{ product.price | number : "2.2-2" }}
+      </span>
+    </div>
+  </div>
+</nz-card>
+<ng-template #coverTemplate>
+  <img [alt]="product.name" [src]="product.imgPath" class="card-img" />
+</ng-template>

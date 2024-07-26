@@ -1,0 +1,14 @@
+<div class="heading">
+  <h1 class="page-title">Products</h1>
+  <ul nz-flex nzJustify="center" class="navigation">
+    <li routerLinkActive="active"><a [routerLink]="['/home']">Home</a></li>
+    <li routerLinkActive="active">
+      <a [routerLink]="['/products']">Products</a>
+    </li>
+  </ul>
+</div>
+<app-product-controls (changeView)="changeView($event)"></app-product-controls>
+<div nz-flex nzGap="120px">
+  <app-product-filters></app-product-filters>
+  <app-product-list [view]="view"></app-product-list>
+</div>

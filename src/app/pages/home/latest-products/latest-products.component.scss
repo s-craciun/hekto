@@ -1,0 +1,28 @@
+.latest-products {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 0;
+
+  .latest-nav {
+    justify-content: center;
+    list-style: none;
+    display: flex;
+    margin-bottom: 50px;
+
+    & > li:not(:last-child) {
+      margin-right: 40px;
+    }
+
+    & > li a,
+    & > li a:link,
+    & > li a:visited {
+      color: var(--color-black);
+    }
+  }
+
+  .product-list {
+    gap: 20px;
+  }
+}
